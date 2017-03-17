@@ -1,0 +1,30 @@
+/*
+* Author: Alexey Sholohov
+* Tools: LESS
+*/
+/*
+* Colors
+*/
+/* ---- */
+html {
+  font-size: 1rem;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  font-size: 1em;
+  color: black;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(top, skyblue 0%, #c36776 100%);
+  background-image: linear-gradient(top, skyblue 0%, #c36776 100%);
+}
+main h1 {
+  text-align: center;
+  color: #000000;
+}
+main .reference img {
+  display: block;
+  max-width: 100%;
+}
+
