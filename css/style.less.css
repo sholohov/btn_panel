@@ -7,11 +7,10 @@
 
 @bgColor: white; // цввет фона страницы
 @color: black; // цвет текста
-@colorSteel: #699FE9;
-@blueBtn: #00C6FF;
-@greenBtn: #67E83F;
-@violetBtn: #E773F0;
-.colorMix(@val: 100%) { color: mix(@color, @bgColor, @val); } // смешивает глобальные цвета: текст и фон
+@colorSteel: #699FE9; // цвет кнопок
+@blueBtn: #00C6FF; // цвет кнопок
+@greenBtn: #67E83F; // цвет кнопок
+@violetBtn: #E773F0; // цвет кнопок
 
 @rem: 0.0625rem;
 @em: 0.0625em;
@@ -31,11 +30,13 @@ html {
 main {
 	display: block;
 	overflow: hidden;
+	min-width: 1024*@rem;
+	overflow-x: auto;
 	.reference {
 		margin: 2rem 0 0;
 		img {
 			display: block;
-			max-width: 100%; 
+			width: 100%; 
 		}
 	}
 	.panel {
@@ -167,7 +168,7 @@ main {
 						line-height: 5rem;
 						top: 0; left: 0; right: 0; bottom: 0;
 						font-size: 40*@rem;
-						color: darken(@blueBtn, 35%);
+						color: darken(@blueBtn, 40%);
 						.linear-gradient-top(@blueBtn, @blueBtn,0%, @blueBtn - #654,50%, @blueBtn,100%);
 						.translate3d(0, 0, 15*@rem);
 						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
@@ -195,8 +196,8 @@ main {
 						position: absolute;
 						padding: 0.75rem 0;
 						top: 0; left: 0; right: 0; bottom: 0;
-						font-size: 26*@rem;
-						color: darken(@greenBtn, 40%);
+						font-size: 25*@rem;
+						color: darken(@greenBtn, 45%);
 						.gradient(mix(@greenBtn, #41C700, 70%), rgba(255,255,255,0.5), rgba(0,10,50,0.2));
 						.border-radius(9*@rem);
 						.translate3d(0, 0, 20*@rem);
@@ -229,7 +230,7 @@ main {
 						top: 6*@rem; left: 4*@rem; right: 8*@rem; bottom: 6*@rem;
 						font-size: 2.25rem;
 						line-height: 7.5rem;
-						color: darken(@blueBtn, 35%);
+						color: darken(@blueBtn, 40%);
 						.gradient(mix(@blueBtn, #09f, 70%), rgba(255,255,255,0.5), rgba(0,10,50,0.2));
 						.border-radius(50%);
 						.translate3d(0, 0, 20*@rem);
