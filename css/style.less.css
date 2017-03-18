@@ -10,6 +10,7 @@
 @colorSteel: #699FE9;
 @blueBtn: #00C6FF;
 @greenBtn: #67E83F;
+@violetBtn: #CF6FF0;
 .colorMix(@val: 100%) { color: mix(@color, @bgColor, @val); } // смешивает глобальные цвета: текст и фон
 
 @rem: 0.0625rem;
@@ -124,9 +125,35 @@ main {
 			}
 			&.one {
 				width: 17rem;
+				.button {
+					width: 3rem;
+					background-color: @violetBtn - #765;
+//					background-image: -webkit-linear-gradient(0deg, multiply(@violetBtn, #779, 50%) 10%, lighten(@violetBtn,10%) 20%, multiply(@violetBtn, #779, 50%) 30%, lighten(@violetBtn,30%) 60%, multiply(@violetBtn, #779, 50%) 85%);
+					.border-radius(0.75rem);
+					.translate3d(0, 0, 20*@rem);
+					.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					&:nth-child(1) {
+						right: auto;
+					}
+					&:nth-child(2) {
+						left: auto;
+					}
+					&:before {
+						content:'X';
+						display: block;
+						position: absolute;
+						line-height: 5rem;
+						top: 0; left: 0; right: 0; bottom: 0;
+						font-size: 40*@rem;
+						color: darken(@violetBtn, 40%);
+						.linear-gradient-top(@violetBtn, @violetBtn,0%, @violetBtn - #432,50%, @violetBtn,100%);
+						.translate3d(0, 0, 15*@rem);
+						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					}
+				}
 			}
 			&.two {
-				width: 5rem;
+				width: 4.75rem;
 				.button {
 					background-color: @blueBtn - #765;
 //					background-image: -webkit-linear-gradient(0deg, multiply(@blueBtn, #779, 50%) 10%, lighten(@blueBtn,10%) 20%, multiply(@blueBtn, #779, 50%) 30%, lighten(@blueBtn,30%) 60%, multiply(@blueBtn, #779, 50%) 85%);
@@ -141,7 +168,7 @@ main {
 						top: 0; left: 0; right: 0; bottom: 0;
 						font-size: 40*@rem;
 						color: darken(@blueBtn, 35%);
-						.linear-gradient-top(@blueBtn, @blueBtn,0%, mix(@blueBtn, #DB00FF, 50%),50%, @blueBtn,100%);
+						.linear-gradient-top(@blueBtn, @blueBtn,0%, @blueBtn - #654,50%, @blueBtn,100%);
 						.translate3d(0, 0, 15*@rem);
 						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
 					}
