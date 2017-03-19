@@ -186,8 +186,9 @@ main {
 			&.four {
 				width: 8.5rem;
 				.button {
+					top: 15*@rem; left: 15*@rem; right: 15*@rem; bottom: 15*@rem;
 					background-color: @greenBtn - #765;
-					.border-radius(9*@rem);
+					.border-radius(2*@rem);
 					&:before {
 						content:'TEXT TEXT';
 						padding: 0.5rem 0;
@@ -196,7 +197,17 @@ main {
 						text-align: center;
 						color: darken(@greenBtn, 45%);
 						.gradient(mix(@greenBtn, #41C700, 70%), rgba(255,255,255,0.5), rgba(0,10,50,0.2));
-						.border-radius(9*@rem);
+						.border-radius(2*@rem);
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						display: block;
+						left: 0; right: 0; bottom: 0;
+						height: 20*@rem;
+						background-color: green - #222;
+						.transform(rotateX(90deg));
+						.transform(translate3d(0, 10*@rem, -10*@rem));
 					}
 				}
 			}
@@ -234,6 +245,12 @@ main {
 			.button {
 				&:active {
 					.translate3d(0, 0, 4*@rem);
+
+				}
+			}
+			&.four .button {
+				&:after:active {
+					display: none;
 				}
 			}
 		}

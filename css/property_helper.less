@@ -272,9 +272,9 @@
 
 // Transforms
 .transform(@args) {
-	-webkit-transform: @args;
-	-ms-transform: @args;
-	transform: @args;
+	-webkit-transform+_: @args;
+	-ms-transform+_: @args;
+	transform+_: @args;
 }
 
 .transform-origin(@args) {
@@ -291,6 +291,10 @@
 
 .rotate(@deg: 45deg) {
 	.transform(rotate(@deg));
+}
+
+.rotate3d(@x, @y, @z) {
+	.transform(rotate3d(@x, @y, @z));
 }
 
 .rotateX(@deg: 45deg) {
