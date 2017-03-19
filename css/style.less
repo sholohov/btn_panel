@@ -1,6 +1,5 @@
 /*
 * Author: Alexey Sholohov
-* Tools: LESS
 */
 
 @import 'property_helper';
@@ -36,7 +35,8 @@ main {
 		margin: 2rem 0 0;
 		img {
 			display: block;
-			width: 100%; 
+			margin: auto;
+			width: 60rem;
 		}
 	}
 	.panel {
@@ -85,16 +85,19 @@ main {
 			}
 			.button {
 				display: block;
+				-webkit-transform-style: preserve-3d;
 				transform-style: preserve-3d;
 				position: absolute;
 				top: 13*@rem; left: 13*@rem; right: 13*@rem; bottom: 13*@rem;
 				.pref(transition, all 0.2s ease);
+				.translate3d(0, 0, 20*@rem);
 				&:before {
 					display: block;
 					position: absolute;
 					font-family: Arial;
 					font-weight: bold;
 					text-align: center;
+					.translate3d(0, 0, 20*@rem);
 					.text-shadow(0 2*@rem 0.25rem #fff);
 					.text-shadow(0 -2*@rem 0.25rem #fff);
 					.text-shadow(2*@rem 0 0.25rem #fff);
@@ -105,79 +108,80 @@ main {
 			&.one,
 			&.three {
 				text-align: center;
-				&:before {
-					font-family: Arial;
-					padding: 8*@rem;
-					content:'TEXT TEXT\
-					TEXT';
-					white-space: pre-wrap;
-					font-size: 1.5rem;
-					font-weight: bold;
-					color: #0ff;
-					.text-shadow(0 0 0.5rem rgba(255,255,255,0.5));
-				}		
-				&:first-line {
-					padding-bottom: 1rem;
-					font-family: Times;
-					font-size: 1rem;
-					font-weight: bold;
-					color: white;
+				.text {
+					.translate3d(0, 0, 20*@rem);
+					padding: 1.75rem 0;
+					&:before {
+						display: block;
+						content: 'TEXT TEXT';
+						font-family: Times;
+						font-size: 1rem;
+						font-weight: bold;
+						color: white;
+					}
+					&:after {
+						display: block;
+						content: 'TEXT';
+						font-family: Arial;
+						padding: 8*@rem;
+						font-size: 1.5rem;
+						font-weight: bold;
+						color: #0ff;
+						.text-shadow(0 0 0.5rem rgba(255,255,255,0.5));
+					}
+				}
+			}
+			&.one,
+			&.two {
+				.button {
+					&:before {
+						content:'X';
+						line-height: 5rem;
+						top: 0; left: 0; right: 0; bottom: 0;
+						font-size: 40*@rem;
+						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					}
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 0; left: 0; right: 0; bottom: 0;
+						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					}
 				}
 			}
 			&.one {
 				width: 17rem;
 				.button {
 					width: 3rem;
-					background-color: @violetBtn - #765;
-//					background-image: -webkit-linear-gradient(0deg, multiply(@violetBtn, #779, 50%) 10%, lighten(@violetBtn,10%) 20%, multiply(@violetBtn, #779, 50%) 30%, lighten(@violetBtn,30%) 60%, multiply(@violetBtn, #779, 50%) 85%);
-					.border-radius(0.75rem);
-					.translate3d(0, 0, 20*@rem);
-					.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
-					&:nth-child(1) {
-						right: auto;
-					}
-					&:nth-child(2) {
-						left: auto;
-					}
+//					background-color: @violetBtn - #765;
+					&:nth-child(1) { right: auto; }
+					&:nth-child(2) { left: auto; }
 					&:before {
-						content:'X';
-						display: block;
-						position: absolute;
-						line-height: 5rem;
-						top: 0; left: 0; right: 0; bottom: 0;
-						font-size: 40*@rem;
 						color: darken(@violetBtn, 50%);
 						.linear-gradient-top(@violetBtn, @violetBtn,0%, @violetBtn - #432,50%, @violetBtn,100%);
-						.translate3d(0, 0, 15*@rem);
-						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					}
+					&:after {
+						background-color: @violetBtn - #765;
 					}
 				}
 			}
 			&.two {
 				width: 4.75rem;
 				.button {
-					background-color: @blueBtn - #765;
-//					background-image: -webkit-linear-gradient(0deg, multiply(@blueBtn, #779, 50%) 10%, lighten(@blueBtn,10%) 20%, multiply(@blueBtn, #779, 50%) 30%, lighten(@blueBtn,30%) 60%, multiply(@blueBtn, #779, 50%) 85%);
-					.border-radius(0.75rem);
-					.translate3d(0, 0, 20*@rem);
-						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+//					background-color: @blueBtn - #765;
 					&:before {
-						content:'X';
-						display: block;
-						position: absolute;
-						line-height: 5rem;
-						top: 0; left: 0; right: 0; bottom: 0;
-						font-size: 40*@rem;
 						color: darken(@blueBtn, 40%);
 						.linear-gradient-top(@blueBtn, @blueBtn,0%, @blueBtn - #654,50%, @blueBtn,100%);
-						.translate3d(0, 0, 15*@rem);
-						.pref(clip-path, polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%));
+					}
+					&:after {
+						background-color: @blueBtn - #765;
 					}
 				}
 			}
 			&.three {
 				width: 17rem;
-				&:before {
+				.text:after {
 					color: #ff0;
 				}
 			}
@@ -185,22 +189,16 @@ main {
 				width: 8.5rem;
 				.button {
 					background-color: @greenBtn - #765;;
-//					background-image: -webkit-linear-gradient(-30deg, multiply(@greenBtn, #779, 50%) 10%, lighten(@greenBtn,10%) 20%, multiply(@greenBtn, #779, 50%) 30%, lighten(@greenBtn,30%) 60%, multiply(@greenBtn, #779, 50%) 85%);
 					.border-radius(9*@rem);
-					.translate3d(0, 0, 20*@rem);
 					&:before {
-						content:'TEXT\
-						TEXT';
-						white-space: pre-wrap;
-						display: block;
-						position: absolute;
-						padding: 0.75rem 0;
+						content:'TEXT TEXT';
+						padding: 0.5rem 0;
 						top: 0; left: 0; right: 0; bottom: 0;
-						font-size: 25*@rem;
+						font-size: 28*@rem;
+						text-align: center;
 						color: darken(@greenBtn, 45%);
 						.gradient(mix(@greenBtn, #41C700, 70%), rgba(255,255,255,0.5), rgba(0,10,50,0.2));
 						.border-radius(9*@rem);
-						.translate3d(0, 0, 20*@rem);
 					}
 				}
 			}
@@ -224,7 +222,6 @@ main {
 					background-color: @blueBtn;
 					background-image: -webkit-linear-gradient(-30deg, multiply(@blueBtn, #779, 50%) 10%, lighten(@blueBtn,10%) 20%, multiply(@blueBtn, #779, 50%) 30%, lighten(@blueBtn,30%) 60%, multiply(@blueBtn, #779, 50%) 85%);
 					.border-radius(50%);
-					.translate3d(0, 0, 20*@rem);
 					&:before {
 						content:'TEXT';
 						top: 6*@rem; left: 4*@rem; right: 8*@rem; bottom: 6*@rem;
@@ -233,14 +230,10 @@ main {
 						color: darken(@blueBtn, 40%);
 						.gradient(mix(@blueBtn, #09f, 70%), rgba(255,255,255,0.5), rgba(0,10,50,0.2));
 						.border-radius(50%);
-						.translate3d(0, 0, 20*@rem);
 					}
 				}
 			}
 			.button {
-				&:before {
-					background-color: rgba(0,0,0,0.5);
-				}
 				&:active {
 					.translate3d(0, 0, 4*@rem);
 				}
