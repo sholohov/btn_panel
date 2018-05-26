@@ -95,6 +95,43 @@ main {
 				background: linear-gradient(to bottom, @color1, @color2 50%, @color1);
 			}
 
+			._cubeSides(@height: 100%, @cut: 0) {
+				&.front {
+					height: @height;
+					top: auto;
+					transform: rotate3d(1, 0, 0, 90deg) translateZ(-@height / 2) translateY(@height / 2);
+				}
+
+				&.back {
+					height: @height;
+					bottom: auto;
+					transform: rotate3d(1, 0, 0, 90deg) translateZ(@height / 2) translateY(@height / 2);
+				}
+				
+				&.left {
+					width: @height;
+					right: auto;
+					transform: rotate3d(0, 1, 0, 90deg) translateZ(-@height / 2) translateX(-@height / 2);
+				}
+				
+				&.right {
+					width: @height;
+					left: auto;
+					transform: rotate3d(0, 1, 0, 90deg) translateZ(@height / 2) translateX(-@height / 2);
+				}
+
+				
+				&.left, &.right {
+					top: @cut;
+					bottom: @cut;
+				}
+
+				&.front, &.back {
+					left: @cut;
+					right: @cut;
+				}
+			}
+
 			.elem {
 				position: relative;
 				display: flex;
@@ -105,17 +142,27 @@ main {
 				border-radius: 2.5vh;
 				background: linear-gradient(@colorSteel, @colorSteel + 100%);
 				box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
-				
-				&:before {
+
+				> .side {
+					display: none;
+					align-items: center;
+					justify-content: center;
 					position: absolute;
-					display: block;
-					content: '';
+					margin: 0;
+					padding: 0;
 					top: 0; left: 0; right: 0; bottom: 0;
-					border-radius: 2vh;
-					font-weight: 700;
+					background-color: rgb(85, 89, 115);
+					._cubeSides(3vh);
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0; left: 0; right: 0; bottom: 0;
 					background-color: rgb(85, 89, 115);
 					transform: translateZ(-3vh);
-					box-shadow: 0 0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+					border-radius: 2.5vh;
 				}
 
 				.display {
@@ -137,7 +184,7 @@ main {
 
 						&:nth-child(1) {
 							font-size: 3vh;
-							font-family: 'Courier New', Courier, monospace;
+							// font-family: 'Courier New', Courier, monospace;
 						}
 
 						&:nth-child(2) {
@@ -206,7 +253,9 @@ main {
 						width: 7vh;
 						
 						.side {
-							&.top {
+							background-color: @colorViolet - #444;
+
+							&.top, &.bottom {
 								._octagonalBtn();
 								._btnGradient(@colorViolet, mix(@colorViolet, rgb(162, 0, 255), 0%));
 
@@ -215,10 +264,7 @@ main {
 								}
 							}
 
-							&.bottom {
-								._octagonalBtn();
-								background-color: @colorViolet;
-							}
+							._cubeSides(4vh, 15%);
 						}
 					}
 				}
@@ -228,7 +274,9 @@ main {
 						width: 7vh;
 						
 						.side {
-							&.top {
+							background-color: @colorBlue - 20%;
+
+							&.top, &.bottom {
 								._octagonalBtn();
 								._btnGradient(@colorBlue + 60%, mix(@colorBlue + 60%, rgb(162, 0, 255), 50%));
 							
@@ -237,10 +285,7 @@ main {
 								}
 							}
 							
-							&.bottom {
-								._octagonalBtn();
-								background-color: @colorBlue;
-							}
+							._cubeSides(4vh, 15%);
 						}
 					}
 				}
@@ -277,29 +322,7 @@ main {
 								}
 							}
 
-							&.front {
-								height: 4vh;
-								top: auto;
-								transform: rotateX(90deg) translateZ(-2vh) translateY(2vh);
-							}
-
-							&.back {
-								height: 4vh;
-								bottom: auto;
-								transform: rotateX(90deg) translateZ(2vh) translateY(2vh);
-							}
-							
-							&.left {
-								width: 4vh;
-								right: auto;
-								transform: rotateY(90deg) translateZ(-2vh) translateX(-2vh);
-							}
-							
-							&.right {
-								width: 4vh;
-								left: auto;
-								transform: rotateY(90deg) translateZ(2vh) translateX(-2vh);
-							}
+							._cubeSides(4vh);
 						}
 					}
 				}
@@ -322,9 +345,11 @@ main {
 						border-radius: 100%;
 						
 						.side {
+							background-color: @colorBlue;
+
 							&.top {
 								border-radius: 100%;
-								background:linear-gradient(30deg, @colorBlue + 150%, @colorBlue - 30%);
+								background: linear-gradient(30deg, @colorBlue + 150%, @colorBlue - 30%);
 
 								> span {
 									color: mix(@colorBlue, black, 30%);
@@ -335,6 +360,8 @@ main {
 								border-radius: 100%;
 								background-color: @colorBlue;
 							}
+
+							._cubeSides(4vh, 33.33%);
 						}
 					}
 				}

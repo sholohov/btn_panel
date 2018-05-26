@@ -132,22 +132,72 @@ main .implementation #panel .elem {
   -webkit-box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
           box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
 }
-main .implementation #panel .elem:before {
+main .implementation #panel .elem > .side {
+  display: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
-  display: block;
-  content: '';
+  margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-border-radius: 2vh;
-          border-radius: 2vh;
-  font-weight: 700;
+  background-color: #555973;
+}
+main .implementation #panel .elem > .side.front {
+  height: 3vh;
+  top: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-1.5vh) translateY(1.5vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(-1.5vh) translateY(1.5vh);
+}
+main .implementation #panel .elem > .side.back {
+  height: 3vh;
+  bottom: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(1.5vh) translateY(1.5vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(1.5vh) translateY(1.5vh);
+}
+main .implementation #panel .elem > .side.left {
+  width: 3vh;
+  right: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-1.5vh) translateX(-1.5vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(-1.5vh) translateX(-1.5vh);
+}
+main .implementation #panel .elem > .side.right {
+  width: 3vh;
+  left: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(1.5vh) translateX(-1.5vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(1.5vh) translateX(-1.5vh);
+}
+main .implementation #panel .elem > .side.left,
+main .implementation #panel .elem > .side.right {
+  top: 0;
+  bottom: 0;
+}
+main .implementation #panel .elem > .side.front,
+main .implementation #panel .elem > .side.back {
+  left: 0;
+  right: 0;
+}
+main .implementation #panel .elem:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #555973;
   -webkit-transform: translateZ(-3vh);
           transform: translateZ(-3vh);
-  -webkit-box-shadow: 0 0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 2.5vh;
+          border-radius: 2.5vh;
 }
 main .implementation #panel .elem .display {
   display: -webkit-box;
@@ -185,7 +235,6 @@ main .implementation #panel .elem .display .text {
 }
 main .implementation #panel .elem .display .text:nth-child(1) {
   font-size: 3vh;
-  font-family: 'Courier New', Courier, monospace;
 }
 main .implementation #panel .elem .display .text:nth-child(2) {
   font-size: 5vh;
@@ -271,7 +320,11 @@ main .implementation #panel .elem.one .display .text:nth-child(2) {
 main .implementation #panel .elem.one .btn {
   width: 7vh;
 }
-main .implementation #panel .elem.one .btn .side.top {
+main .implementation #panel .elem.one .btn .side {
+  background-color: #a32fac;
+}
+main .implementation #panel .elem.one .btn .side.top,
+main .implementation #panel .elem.one .btn .side.bottom {
   -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
           clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
   background: -webkit-gradient(linear, left top, left bottom, from(#E773F0), color-stop(50%, #a200ff), to(#E773F0));
@@ -279,18 +332,52 @@ main .implementation #panel .elem.one .btn .side.top {
   background: -o-linear-gradient(top, #E773F0, #a200ff 50%, #E773F0);
   background: linear-gradient(to bottom, #E773F0, #a200ff 50%, #E773F0);
 }
-main .implementation #panel .elem.one .btn .side.top span {
+main .implementation #panel .elem.one .btn .side.top span,
+main .implementation #panel .elem.one .btn .side.bottom span {
   color: #3a1d3c;
 }
-main .implementation #panel .elem.one .btn .side.bottom {
-  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
-          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
-  background-color: #E773F0;
+main .implementation #panel .elem.one .btn .side.front {
+  height: 4vh;
+  top: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+}
+main .implementation #panel .elem.one .btn .side.back {
+  height: 4vh;
+  bottom: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+}
+main .implementation #panel .elem.one .btn .side.left {
+  width: 4vh;
+  right: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.one .btn .side.right {
+  width: 4vh;
+  left: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.one .btn .side.left,
+main .implementation #panel .elem.one .btn .side.right {
+  top: 15%;
+  bottom: 15%;
+}
+main .implementation #panel .elem.one .btn .side.front,
+main .implementation #panel .elem.one .btn .side.back {
+  left: 15%;
+  right: 15%;
 }
 main .implementation #panel .elem.two .btn {
   width: 7vh;
 }
-main .implementation #panel .elem.two .btn .side.top {
+main .implementation #panel .elem.two .btn .side {
+  background-color: #0275c3;
+}
+main .implementation #panel .elem.two .btn .side.top,
+main .implementation #panel .elem.two .btn .side.bottom {
   -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
           clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
   background: -webkit-gradient(linear, left top, left bottom, from(#52c5ff), color-stop(50%, #7a63ff), to(#52c5ff));
@@ -298,13 +385,43 @@ main .implementation #panel .elem.two .btn .side.top {
   background: -o-linear-gradient(top, #52c5ff, #7a63ff 50%, #52c5ff);
   background: linear-gradient(to bottom, #52c5ff, #7a63ff 50%, #52c5ff);
 }
-main .implementation #panel .elem.two .btn .side.top span {
+main .implementation #panel .elem.two .btn .side.top span,
+main .implementation #panel .elem.two .btn .side.bottom span {
   color: #072941;
 }
-main .implementation #panel .elem.two .btn .side.bottom {
-  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
-          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
-  background-color: #1689d7;
+main .implementation #panel .elem.two .btn .side.front {
+  height: 4vh;
+  top: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+}
+main .implementation #panel .elem.two .btn .side.back {
+  height: 4vh;
+  bottom: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+}
+main .implementation #panel .elem.two .btn .side.left {
+  width: 4vh;
+  right: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.two .btn .side.right {
+  width: 4vh;
+  left: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.two .btn .side.left,
+main .implementation #panel .elem.two .btn .side.right {
+  top: 15%;
+  bottom: 15%;
+}
+main .implementation #panel .elem.two .btn .side.front,
+main .implementation #panel .elem.two .btn .side.back {
+  left: 15%;
+  right: 15%;
 }
 main .implementation #panel .elem.three {
   width: 45vh;
@@ -340,26 +457,36 @@ main .implementation #panel .elem.four .btn .side.top > span {
 main .implementation #panel .elem.four .btn .side.front {
   height: 4vh;
   top: auto;
-  -webkit-transform: rotateX(90deg) translateZ(-2vh) translateY(2vh);
-          transform: rotateX(90deg) translateZ(-2vh) translateY(2vh);
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
 }
 main .implementation #panel .elem.four .btn .side.back {
   height: 4vh;
   bottom: auto;
-  -webkit-transform: rotateX(90deg) translateZ(2vh) translateY(2vh);
-          transform: rotateX(90deg) translateZ(2vh) translateY(2vh);
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
 }
 main .implementation #panel .elem.four .btn .side.left {
   width: 4vh;
   right: auto;
-  -webkit-transform: rotateY(90deg) translateZ(-2vh) translateX(-2vh);
-          transform: rotateY(90deg) translateZ(-2vh) translateX(-2vh);
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
 }
 main .implementation #panel .elem.four .btn .side.right {
   width: 4vh;
   left: auto;
-  -webkit-transform: rotateY(90deg) translateZ(2vh) translateX(-2vh);
-          transform: rotateY(90deg) translateZ(2vh) translateX(-2vh);
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.four .btn .side.left,
+main .implementation #panel .elem.four .btn .side.right {
+  top: 0;
+  bottom: 0;
+}
+main .implementation #panel .elem.four .btn .side.front,
+main .implementation #panel .elem.four .btn .side.back {
+  left: 0;
+  right: 0;
 }
 main .implementation #panel .elem.five {
   -webkit-box-pack: center;
@@ -389,6 +516,9 @@ main .implementation #panel .elem.five .btn {
   -webkit-border-radius: 100%;
           border-radius: 100%;
 }
+main .implementation #panel .elem.five .btn .side {
+  background-color: #1689d7;
+}
 main .implementation #panel .elem.five .btn .side.top {
   -webkit-border-radius: 100%;
           border-radius: 100%;
@@ -403,6 +533,40 @@ main .implementation #panel .elem.five .btn .side.bottom {
   -webkit-border-radius: 100%;
           border-radius: 100%;
   background-color: #1689d7;
+}
+main .implementation #panel .elem.five .btn .side.front {
+  height: 4vh;
+  top: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+}
+main .implementation #panel .elem.five .btn .side.back {
+  height: 4vh;
+  bottom: auto;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+          transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
+}
+main .implementation #panel .elem.five .btn .side.left {
+  width: 4vh;
+  right: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.five .btn .side.right {
+  width: 4vh;
+  left: auto;
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+          transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.five .btn .side.left,
+main .implementation #panel .elem.five .btn .side.right {
+  top: 33.33%;
+  bottom: 33.33%;
+}
+main .implementation #panel .elem.five .btn .side.front,
+main .implementation #panel .elem.five .btn .side.back {
+  left: 33.33%;
+  right: 33.33%;
 }
 main .rotation_tuning {
   display: -webkit-box;
