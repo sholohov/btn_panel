@@ -489,6 +489,21 @@
 	}
 }
 
+.outline() {
+	outline: 1px solid rgba(255, 166, 0, 0.5);
+	
+	&::before, &::after {
+		outline: 1px solid rgba(255, 166, 0, 0.5);
+	}
+	
+	* {
+		outline: 1px solid rgba(255, 166, 0, 0.5);
+		
+		&::before, &::after {
+			outline: 1px solid rgba(255, 166, 0, 0.5);
+		}
+	}
+}
 
 .pref(@property, @value) {
 	-webkit-@{property}: @value;

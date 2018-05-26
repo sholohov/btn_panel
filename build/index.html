@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="display/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Панель кнопок</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/script.js"></script>
+</head>
+
+<body>
+	<main>
+		<div class="reference" hidden>
+			<h2 class="title">Reference</h2>
+			<figure class="image" style="background-image: url(img/reference.png)"></figure>
+		</div>
+
+		<div class="implementation">
+			<h2 class="title">Implementation</h2>
+
+			<div id="panel">
+				<div class="elem one">
+					<button class="btn">
+						<div class="side top"><span>X</span></div>
+						<div class="side bottom"></div>
+					</button>
+					<div class="display">
+						<p class="text">Text Text</p>
+						<p class="text">Text</p>
+					</div>
+					<button class="btn">
+						<div class="side top"><span>X</span></div>
+						<div class="side bottom"></div>
+					</button>
+				</div>
+
+				<div class="elem two">
+					<button class="btn">
+						<div class="side top"><span>X</span></div>
+						<div class="side bottom"></div>
+					</button>
+				</div>
+
+				<div class="elem three">
+					<div class="display">
+						<p class="text">Text Text</p>
+						<p class="text">Text</p>
+					</div>
+				</div>
+
+				<div class="elem four">
+					<button class="btn">
+						<div class="side top"><span>Text Text</span></div>
+						<div class="side front"></div>
+						<div class="side back"></div>
+						<div class="side left"></div>
+						<div class="side right"></div>
+					</button>
+				</div>
+
+				<div class="elem five">
+					<button class="btn">
+						<div class="side top"><span>Text</span></div>
+						<div class="side bottom"></div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="rotation_tuning">
+			<h2 class="title">Rotate panel</h2>
+
+			<p class="range x">
+				<span class="axis">X:</span> <span class="wrapper"><input id="panel_rotate_x" step="1" type="range" value="50" min="-180" max="180"></span>
+			</p>
+
+			<p class="range y">
+				<span class="axis">Y:</span> <span class="wrapper"><input id="panel_rotate_y" step="1" type="range" value="0" min="-180" max="180"></span>
+			</p>
+		</div>
+	</main>
+</body>
+
+</html>

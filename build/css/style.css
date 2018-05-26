@@ -1,0 +1,450 @@
+html {
+  font-size: 1rem;
+  height: 100%;
+}
+html body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: black;
+  background-color: white;
+}
+html body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+button {
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 2vh;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+main .title {
+  text-align: center;
+  margin: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+main .reference {
+  width: 100%;
+}
+main .reference .image {
+  display: block;
+  height: 30vh;
+  margin: 0;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .implementation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+  -webkit-perspective: 200vh;
+          perspective: 200vh;
+  -webkit-perspective-origin: 50% 100%;
+          perspective-origin: 50% 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-filter: drop-shadow(0 5vh 0.5vh rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 5vh 0.5vh rgba(0, 0, 0, 0.3));
+}
+main .implementation * {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+main .implementation #panel {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  -webkit-transform: rotateX(50deg);
+          transform: rotateX(50deg);
+}
+main .implementation #panel .elem {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 10vh;
+  height: 20vh;
+  padding: 1.75vh;
+  margin: 0 0.5vh;
+  -webkit-border-radius: 2.5vh;
+          border-radius: 2.5vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7e91b4), to(#e2f5ff));
+  background: -webkit-linear-gradient(#7e91b4, #e2f5ff);
+  background: -o-linear-gradient(#7e91b4, #e2f5ff);
+  background: linear-gradient(#7e91b4, #e2f5ff);
+  -webkit-box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+          box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+}
+main .implementation #panel .elem:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-border-radius: 2vh;
+          border-radius: 2vh;
+  font-weight: 700;
+  background-color: #555973;
+  -webkit-transform: translateZ(-3vh);
+          transform: translateZ(-3vh);
+  -webkit-box-shadow: 0 0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
+}
+main .implementation #panel .elem .display {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0;
+  -webkit-border-radius: 1.5vh;
+          border-radius: 1.5vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#005384), color-stop(40%, black));
+  background: -webkit-linear-gradient(top, #005384, black 40%);
+  background: -o-linear-gradient(top, #005384, black 40%);
+  background: linear-gradient(to bottom, #005384, black 40%);
+  -webkit-box-shadow: 0 -0.5vh 1vh rgba(255, 255, 255, 0.5), inset 0 0 0 1vh #050505, inset 0 0.5vh 0.5vh 1vh #3285b6;
+          box-shadow: 0 -0.5vh 1vh rgba(255, 255, 255, 0.5), inset 0 0 0 1vh #050505, inset 0 0.5vh 0.5vh 1vh #3285b6;
+}
+main .implementation #panel .elem .display .text {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5vh;
+}
+main .implementation #panel .elem .display .text:nth-child(1) {
+  font-size: 3vh;
+  font-family: 'Courier New', Courier, monospace;
+}
+main .implementation #panel .elem .display .text:nth-child(2) {
+  font-size: 5vh;
+  text-transform: uppercase;
+}
+main .implementation #panel .elem .btn {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+main .implementation #panel .elem .btn .side {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+main .implementation #panel .elem .btn .side:not(.top) {
+  -webkit-box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+}
+main .implementation #panel .elem .btn .side.top {
+  -webkit-transform: translateZ(4vh);
+          transform: translateZ(4vh);
+  -webkit-box-shadow: inset 0 0 1vh white;
+          box-shadow: inset 0 0 1vh white;
+}
+main .implementation #panel .elem .btn .side.top > span {
+  -webkit-transform: scale(0.7, 1);
+      -ms-transform: scale(0.7, 1);
+          transform: scale(0.7, 1);
+  font-size: 9vh;
+  font-weight: 700;
+  line-height: 0.8;
+  text-transform: uppercase;
+  text-shadow: 0 0 1vh white,
+								             0 0 1vh white,
+								             0 0 1vh white;
+  -webkit-text-stroke: 0.15vh white;
+}
+main .implementation #panel .elem .btn:active {
+  -webkit-transform: translateZ(-3vh);
+          transform: translateZ(-3vh);
+}
+main .implementation #panel .elem.one .display {
+  width: 30vh;
+  margin: 0 1.5vh;
+}
+main .implementation #panel .elem.one .display .text:nth-child(2) {
+  color: #00f7ff;
+  text-shadow: 0 0 2vh #00d9e1;
+}
+main .implementation #panel .elem.one .btn {
+  width: 7vh;
+}
+main .implementation #panel .elem.one .btn .side.top {
+  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#E773F0), color-stop(50%, #a200ff), to(#E773F0));
+  background: -webkit-linear-gradient(top, #E773F0, #a200ff 50%, #E773F0);
+  background: -o-linear-gradient(top, #E773F0, #a200ff 50%, #E773F0);
+  background: linear-gradient(to bottom, #E773F0, #a200ff 50%, #E773F0);
+}
+main .implementation #panel .elem.one .btn .side.top span {
+  color: #3a1d3c;
+}
+main .implementation #panel .elem.one .btn .side.bottom {
+  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+  background-color: #E773F0;
+}
+main .implementation #panel .elem.two .btn {
+  width: 7vh;
+}
+main .implementation #panel .elem.two .btn .side.top {
+  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#52c5ff), color-stop(50%, #7a63ff), to(#52c5ff));
+  background: -webkit-linear-gradient(top, #52c5ff, #7a63ff 50%, #52c5ff);
+  background: -o-linear-gradient(top, #52c5ff, #7a63ff 50%, #52c5ff);
+  background: linear-gradient(to bottom, #52c5ff, #7a63ff 50%, #52c5ff);
+}
+main .implementation #panel .elem.two .btn .side.top span {
+  color: #072941;
+}
+main .implementation #panel .elem.two .btn .side.bottom {
+  -webkit-clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+          clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+  background-color: #1689d7;
+}
+main .implementation #panel .elem.three {
+  width: 45vh;
+}
+main .implementation #panel .elem.three .display .text:nth-child(2) {
+  color: yellow;
+  text-shadow: 0 0 2vh #e1e100;
+}
+main .implementation #panel .elem.four {
+  width: 26vh;
+}
+main .implementation #panel .elem.four .btn {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 0.5vh;
+          border-radius: 0.5vh;
+}
+main .implementation #panel .elem.four .btn .side {
+  background-color: #007100;
+}
+main .implementation #panel .elem.four .btn .side.top {
+  background: -webkit-gradient(linear, left top, left bottom, from(#67E83F), color-stop(50%, #2bac03), to(#67E83F));
+  background: -webkit-linear-gradient(top, #67E83F, #2bac03 50%, #67E83F);
+  background: -o-linear-gradient(top, #67E83F, #2bac03 50%, #67E83F);
+  background: linear-gradient(to bottom, #67E83F, #2bac03 50%, #67E83F);
+  -webkit-border-radius: 0.5vh;
+          border-radius: 0.5vh;
+}
+main .implementation #panel .elem.four .btn .side.top > span {
+  font-size: 8.5vh;
+  color: #17330e;
+}
+main .implementation #panel .elem.four .btn .side.front {
+  height: 4vh;
+  top: auto;
+  -webkit-transform: rotateX(90deg) translateZ(-2vh) translateY(2vh);
+          transform: rotateX(90deg) translateZ(-2vh) translateY(2vh);
+}
+main .implementation #panel .elem.four .btn .side.back {
+  height: 4vh;
+  bottom: auto;
+  -webkit-transform: rotateX(90deg) translateZ(2vh) translateY(2vh);
+          transform: rotateX(90deg) translateZ(2vh) translateY(2vh);
+}
+main .implementation #panel .elem.four .btn .side.left {
+  width: 4vh;
+  right: auto;
+  -webkit-transform: rotateY(90deg) translateZ(-2vh) translateX(-2vh);
+          transform: rotateY(90deg) translateZ(-2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.four .btn .side.right {
+  width: 4vh;
+  left: auto;
+  -webkit-transform: rotateY(90deg) translateZ(2vh) translateX(-2vh);
+          transform: rotateY(90deg) translateZ(2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.five {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28vh;
+  height: 28vh;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+}
+main .implementation #panel .elem.five::before {
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+}
+main .implementation #panel .elem.five .btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+}
+main .implementation #panel .elem.five .btn .side.top {
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  background: -webkit-linear-gradient(60deg, #acffff, #006bb9);
+  background: -o-linear-gradient(60deg, #acffff, #006bb9);
+  background: linear-gradient(30deg, #acffff, #006bb9);
+}
+main .implementation #panel .elem.five .btn .side.top > span {
+  color: #072941;
+}
+main .implementation #panel .elem.five .btn .side.bottom {
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  background-color: #1689d7;
+}
+main .rotation_tuning {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4vh;
+  width: 100%;
+}
+main .rotation_tuning .range {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vh;
+  max-width: 90%;
+}
+main .rotation_tuning .range .axis,
+main .rotation_tuning .range .wrapper {
+  margin: 0 1vh;
+}
+main .rotation_tuning .range .wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+main .rotation_tuning .range .wrapper input[type="range"] {
+  width: 100%;
+}
+
+

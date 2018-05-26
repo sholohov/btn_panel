@@ -1,0 +1,39 @@
+{
+  "name": "buttonpanel",
+  "version": "1.0.0",
+  "description": "css game control panel",
+  "main": "gulpfile.js",
+  "scripts": {
+	"start": "gulp debug",
+	"build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sholohov/btn_panel.git"
+  },
+  "author": "Alexey Sholohov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sholohov/btn_panel/issues"
+  },
+  "homepage": "https://github.com/sholohov/btn_panel#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.24.4",
+    "browserify": "^16.2.2",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.8",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

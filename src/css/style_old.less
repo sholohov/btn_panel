@@ -1,7 +1,6 @@
-/*
-* Author: Alexey Sholohov
-*/
+// out: null
 
+.hide_code() {
 @import 'property_helper';
 
 @bgColor: white; // цввет фона страницы
@@ -30,6 +29,10 @@ html {
 
 main {
 	display: block;
+
+	* {
+		.box-sizing(border-box);
+	}
 
 	.title {
 		text-align: center;
@@ -66,7 +69,6 @@ main {
 			.transform(rotateX(36deg));
 			.linear-gradient-left(desaturate(darken(@colorSteel, 20%),60%), rgba(0,0,0,0.3),10%, rgba(255,255,255,0.1),30%, rgba(255,255,255,0.1),70%, rgba(0,0,0,0.3),90%);
 			.border-radius(1rem);
-			.box-sizing(border-box);
 
 			&:before,
 			&:after {
@@ -284,4 +286,5 @@ main {
 			}
 		}
 	}
+}
 }
