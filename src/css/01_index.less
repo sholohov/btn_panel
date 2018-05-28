@@ -46,6 +46,7 @@ main {
 	height: 100%;
 	padding: 0;
 	overflow: hidden;
+	user-select: none;
 
 	.title {
 		text-align: center;
@@ -95,7 +96,7 @@ main {
 				background: linear-gradient(to bottom, @color1, @color2 50%, @color1);
 			}
 
-			._cubeSides(@height: 100%, @cut: 0) {
+			._cube(@height: 100%, @cut: 0) {
 				&.front {
 					height: @height;
 					top: auto;
@@ -132,17 +133,15 @@ main {
 				}
 			}
 
-			._cylinder(@height: 100%, @cut: 36.6%) {
+			._cylinder(@height: 100%, @deep: 1.5vh) {
 				@deg: 30deg;
-				@deep: @height * 0.4;
+				@cut: 36.6%;
 
 				&.front, &.back, &.left, &.right {
 					&::before, &::after {
 						content: '';
-						// display: none;
 						position: absolute;
 						top: 0; left: 0; right: 0; bottom: 0;
-						background-color: rgb(180, 180, 180);
 					}
 				}
 				
@@ -227,26 +226,48 @@ main {
 				background: linear-gradient(@colorSteel, @colorSteel + 100%);
 				box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
 
-				> .side {
-					display: none;
-					align-items: center;
-					justify-content: center;
+				.faces {
 					position: absolute;
-					margin: 0;
-					padding: 0;
 					top: 0; left: 0; right: 0; bottom: 0;
-					background-color: rgb(85, 89, 115);
-					._cubeSides(3vh);
+					transform: translate3d(0, 0, -3vh);
+					
+					.side {
+						align-items: center;
+						justify-content: center;
+						position: absolute;
+						margin: 0;
+						padding: 0;
+						top: 0; left: 0; right: 0; bottom: 0;
+						background-color: rgb(85, 89, 115);
+						
+						&::before, &::after {
+							background-color: rgb(85, 89, 115);
+						}
+						
+						&.bottom {
+							border-radius: 2.5vh;
+						}
+					}
 				}
+				
+				&:not(.five) {
+					.faces {
+						.side {
+							._cube(3vh, 1.75vh);
+						}
+					}
+				}
+				
+				&.five {
+					.faces {
+						.side {
+							._cylinder(3vh, 1.75vh);
 
-				&:before {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0; left: 0; right: 0; bottom: 0;
-					background-color: rgb(85, 89, 115);
-					transform: translateZ(-3vh);
-					border-radius: 2.5vh;
+							&.bottom {
+								border-radius: 100%;
+							}
+						}
+					}
 				}
 
 				.display {
@@ -348,7 +369,7 @@ main {
 								}
 							}
 
-							._cubeSides(4vh, 15%);
+							._cube(4vh, 15%);
 						}
 					}
 				}
@@ -369,7 +390,7 @@ main {
 								}
 							}
 							
-							._cubeSides(4vh, 15%);
+							._cube(4vh, 15%);
 						}
 					}
 				}
@@ -406,7 +427,7 @@ main {
 								}
 							}
 
-							._cubeSides(4vh);
+							._cube(4vh);
 						}
 					}
 				}
@@ -417,10 +438,6 @@ main {
 					width: 28vh;
 					height: 28vh;
 					border-radius: 100%;
-					
-					&::before {
-						border-radius: 100%;
-					}
 					
 					.btn {
 						display: flex;
