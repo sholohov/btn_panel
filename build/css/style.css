@@ -534,11 +534,35 @@ main .implementation #panel .elem.five .btn .side.bottom {
           border-radius: 100%;
   background-color: #1689d7;
 }
+main .implementation #panel .elem.five .btn .side.front::before,
+main .implementation #panel .elem.five .btn .side.back::before,
+main .implementation #panel .elem.five .btn .side.left::before,
+main .implementation #panel .elem.five .btn .side.right::before,
+main .implementation #panel .elem.five .btn .side.front::after,
+main .implementation #panel .elem.five .btn .side.back::after,
+main .implementation #panel .elem.five .btn .side.left::after,
+main .implementation #panel .elem.five .btn .side.right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b4b4b4;
+}
 main .implementation #panel .elem.five .btn .side.front {
   height: 4vh;
   top: auto;
   -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
           transform: rotate3d(1, 0, 0, 90deg) translateZ(-2vh) translateY(2vh);
+}
+main .implementation #panel .elem.five .btn .side.front::before {
+  -webkit-transform: rotateY(30deg) translate3d(-94%, 0, -1.6vh);
+          transform: rotateY(30deg) translate3d(-94%, 0, -1.6vh);
+}
+main .implementation #panel .elem.five .btn .side.front::after {
+  -webkit-transform: rotateY(-30deg) translate3d(94%, 0, -1.6vh);
+          transform: rotateY(-30deg) translate3d(94%, 0, -1.6vh);
 }
 main .implementation #panel .elem.five .btn .side.back {
   height: 4vh;
@@ -546,11 +570,27 @@ main .implementation #panel .elem.five .btn .side.back {
   -webkit-transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
           transform: rotate3d(1, 0, 0, 90deg) translateZ(2vh) translateY(2vh);
 }
+main .implementation #panel .elem.five .btn .side.back::before {
+  -webkit-transform: rotateY(30deg) translate3d(94%, 0, 1.6vh);
+          transform: rotateY(30deg) translate3d(94%, 0, 1.6vh);
+}
+main .implementation #panel .elem.five .btn .side.back::after {
+  -webkit-transform: rotateY(-30deg) translate3d(-94%, 0, 1.6vh);
+          transform: rotateY(-30deg) translate3d(-94%, 0, 1.6vh);
+}
 main .implementation #panel .elem.five .btn .side.left {
   width: 4vh;
   right: auto;
   -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
           transform: rotate3d(0, 1, 0, 90deg) translateZ(-2vh) translateX(-2vh);
+}
+main .implementation #panel .elem.five .btn .side.left::before {
+  -webkit-transform: rotateX(30deg) translate3d(0, 94%, -1.6vh);
+          transform: rotateX(30deg) translate3d(0, 94%, -1.6vh);
+}
+main .implementation #panel .elem.five .btn .side.left::after {
+  -webkit-transform: rotateX(-30deg) translate3d(0, -94%, -1.6vh);
+          transform: rotateX(-30deg) translate3d(0, -94%, -1.6vh);
 }
 main .implementation #panel .elem.five .btn .side.right {
   width: 4vh;
@@ -558,15 +598,49 @@ main .implementation #panel .elem.five .btn .side.right {
   -webkit-transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
           transform: rotate3d(0, 1, 0, 90deg) translateZ(2vh) translateX(-2vh);
 }
+main .implementation #panel .elem.five .btn .side.right::before {
+  -webkit-transform: rotateX(-30deg) translate3d(0, 94%, 1.6vh);
+          transform: rotateX(-30deg) translate3d(0, 94%, 1.6vh);
+}
+main .implementation #panel .elem.five .btn .side.right::after {
+  -webkit-transform: rotateX(30deg) translate3d(0, -94%, 1.6vh);
+          transform: rotateX(30deg) translate3d(0, -94%, 1.6vh);
+}
 main .implementation #panel .elem.five .btn .side.left,
 main .implementation #panel .elem.five .btn .side.right {
-  top: 33.33%;
-  bottom: 33.33%;
+  top: 36.6%;
+  bottom: 36.6%;
 }
 main .implementation #panel .elem.five .btn .side.front,
 main .implementation #panel .elem.five .btn .side.back {
-  left: 33.33%;
-  right: 33.33%;
+  left: 36.6%;
+  right: 36.6%;
+}
+main .implementation #panel .elem.five .btn .side.front,
+main .implementation #panel .elem.five .btn .side.back {
+  -webkit-box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
+}
+main .implementation #panel .elem.five .btn .side.front::before,
+main .implementation #panel .elem.five .btn .side.back::before,
+main .implementation #panel .elem.five .btn .side.front::after,
+main .implementation #panel .elem.five .btn .side.back::after {
+  background-color: #1689d7;
+  -webkit-box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
+}
+main .implementation #panel .elem.five .btn .side.left,
+main .implementation #panel .elem.five .btn .side.right {
+  -webkit-box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
+          box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
+}
+main .implementation #panel .elem.five .btn .side.left::before,
+main .implementation #panel .elem.five .btn .side.right::before,
+main .implementation #panel .elem.five .btn .side.left::after,
+main .implementation #panel .elem.five .btn .side.right::after {
+  background-color: #1689d7;
+  -webkit-box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
+          box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
 }
 main .rotation_tuning {
   display: -webkit-box;
@@ -595,7 +669,7 @@ main .rotation_tuning .range {
   display: -ms-flexbox;
   display: flex;
   width: 100vh;
-  max-width: 90%;
+  max-width: 94%;
 }
 main .rotation_tuning .range .axis,
 main .rotation_tuning .range .wrapper {
