@@ -5,7 +5,8 @@
 @rem: 0.0625rem;
 @em: 0.0625em;
 @colorSteel: #7e91b4; // цвет кнопок
-@colorBlue: rgb(22, 137, 215); // цвет кнопок
+@colorSteelDark: #555973; // цвет базы
+@colorBlue: #1689d7; // цвет кнопок
 @colorGreen: #67E83F; // цвет кнопок
 @colorViolet: #E773F0; // цвет кнопок
 
@@ -133,85 +134,28 @@ main {
 				}
 			}
 
-			._cylinder(@height: 100%, @deep: 1.5vh) {
-				@deg: 30deg;
-				@cut: 36.6%;
+			._cylinder(@rad) {
+				position: absolute;
+				top: 50; left: 50%;
+				width: 0;
+				height: 0;
+				transform-origin: 50%;
 
-				&.front, &.back, &.left, &.right {
-					&::before, &::after {
-						content: '';
-						position: absolute;
-						top: 0; left: 0; right: 0; bottom: 0;
-					}
-				}
-				
-				&.front {
-					height: @height;
-					top: auto;
-					transform: rotate3d(1, 0, 0, 90deg) translateZ(-(@height / 2)) translateY(@height / 2);
-					
-					&::before {
-						// display: block;
-						transform: rotateY(@deg) translate3d(-94%, 0, -@deep);
-					}
-					
-					&::after {
-						// display: block;
-						transform: rotateY(-@deg) translate3d(94%, 0, -@deep);
-					}
-				}
+				.side {
+					position: absolute;
+					top: 0; left: 0;
+					width: 3.7vh;
+					height: 3vh;
+					background-color: @colorSteelDark;
 
-				&.back {
-					height: @height;
-					bottom: auto;
-					transform: rotate3d(1, 0, 0, 90deg) translateZ(@height / 2) translateY(@height / 2);
-					
-					&::before {
-						transform: rotateY(@deg) translate3d(94%, 0, @deep);
-					}
-					
-					&::after {
-						transform: rotateY(-@deg) translate3d(-94%, 0, @deep);
-					}
-				}
-				
-				&.left {
-					width: @height;
-					right: auto;
-					transform: rotate3d(0, 1, 0, 90deg) translateZ(-@height / 2) translateX(-@height / 2);
-					
-					&::before {
-						transform: rotateX(@deg) translate3d(0, 94%, -@deep);
-					}
-					
-					&::after {
-						transform: rotateX(-@deg) translate3d(0, -94%, -@deep);
-					}
-				}
-				
-				&.right {
-					width: @height;
-					left: auto;
-					transform: rotate3d(0, 1, 0, 90deg) translateZ(@height / 2) translateX(-@height / 2);
-					
-					&::before {
-						transform: rotateX(-@deg) translate3d(0, 94%, @deep);
-					}
-					
-					&::after {
-						transform: rotateX(@deg) translate3d(0, -94%, @deep);
-					}
-				}
+					.for(@i: 0) when (@i <= 23) {
+						&.s-@{i} {
+							transform: rotateY(15deg * @i) translate3d(0,0,@rad);
+						}
 
-				
-				&.left, &.right {
-					top: @cut;
-					bottom: @cut;
-				}
-
-				&.front, &.back {
-					left: @cut;
-					right: @cut;
+						.for(@i + 1);
+					}
+					.for();
 				}
 			}
 
@@ -226,7 +170,7 @@ main {
 				background: linear-gradient(@colorSteel, @colorSteel + 100%);
 				box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
 
-				.faces {
+				> .faces {
 					position: absolute;
 					top: 0; left: 0; right: 0; bottom: 0;
 					transform: translate3d(0, 0, -3vh);
@@ -238,14 +182,15 @@ main {
 						margin: 0;
 						padding: 0;
 						top: 0; left: 0; right: 0; bottom: 0;
-						background-color: rgb(85, 89, 115);
+						background-color: @colorSteelDark;
 						
 						&::before, &::after {
-							background-color: rgb(85, 89, 115);
+							background-color: @colorSteelDark;
 						}
 						
 						&.bottom {
 							border-radius: 2.5vh;
+							background-color: darken(@colorSteelDark, 5%);
 						}
 					}
 				}
@@ -259,12 +204,15 @@ main {
 				}
 				
 				&.five {
-					.faces {
+					
+					> .shape {
 						.side {
-							._cylinder(3vh, 1.75vh);
+							position: absolute;
+							top: 0; left: 0; right: 0; bottom: 0;
 
 							&.bottom {
-								border-radius: 100%;
+								border-radius: 50%;
+								background-color: @colorSteelDark;
 							}
 						}
 					}
@@ -438,20 +386,30 @@ main {
 					width: 28vh;
 					height: 28vh;
 					border-radius: 100%;
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 0; left: 0; right: 0; bottom: 0;
+						background: #000;
+						transform: translateZ(-3vh);
+						border-radius: 50%;
+						background-color: darken(@colorSteelDark, 5%);
+					}
 					
 					.btn {
+						position: relative;
 						display: flex;
 						width: 100%;
 						height: 100%;
-						border-radius: 100%;
-						
-						.side {
-							background-color: @colorBlue;
 
+						> .side {
 							&.top {
 								border-radius: 100%;
 								background: linear-gradient(30deg, @colorBlue + 150%, @colorBlue - 30%);
-
+								background-color: @colorBlue;
+								
 								> span {
 									color: mix(@colorBlue, black, 30%);
 								}
@@ -461,26 +419,59 @@ main {
 								border-radius: 100%;
 								background-color: @colorBlue;
 							}
+						}
 
-							._cylinder(4vh);
-
-							&.front, &.back {
-								box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
+						.shape {
+							position: absolute;
+							top: 0; left: 50%;
+							width: 100%;
+							height: 100%;
+							transform: rotateX(90deg);
 							
-								&::before, &::after {
-									background-color: @colorBlue;
-									box-shadow: inset 0 1vh 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset 0 -1vh 1vh -0.5vh rgba(0, 0, 0, 0.25);
-								}
-							}
+							.side {
+								position: absolute;
+								top: 50%; left: -1.7vh;
+								height: 4vh;
+								width: 3.4vh;
+								background-color: @colorBlue;
+								box-shadow: none;
+								background: linear-gradient(to top, darken(@colorBlue, 10%), @colorBlue 30%, @colorBlue 70%, darken(@colorBlue, 10%));
 
-							&.left, &.right {
-								box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
-							
-								&::before, &::after {
-									background-color: @colorBlue;
-									box-shadow: inset 1vh 0 1.5vh -0.5vh rgba(0, 0, 0, 0.25), inset -1vh 0 1vh -0.5vh rgba(0, 0, 0, 0.25);
+								.for(@i) when (@i <= 23) {
+									&.s-@{i} {
+										transform: rotateY(15deg * @i) translateZ(12.2vh);
+									}
+									
+									.for(@i + 1);
 								}
+								.for(0);
 							}
+						}
+					}
+
+					> .shape {
+						position: absolute;
+						top: 0; left: 50%;
+						width: 100%;
+						height: 100%;
+						transform: rotateX(90deg) translateY(-3vh);
+						
+						.side {
+							position: absolute;
+							top: 50%; left: -1.9vh;
+							height: 3vh;
+							width: 3.8vh;
+							box-shadow: none;
+							background-color: @colorSteelDark;
+
+							.for(@i) when (@i <= 23) {
+								&.s-@{i} {
+									transform: rotateY(15deg * @i) translateZ(13.9vh);
+								}
+								
+								.for(@i + 1);
+							}
+							.for(0);
 						}
 					}
 				}
