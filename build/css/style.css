@@ -133,8 +133,6 @@ main .implementation #panel .elem {
   background: -webkit-linear-gradient(#7e91b4, #e2f5ff);
   background: -o-linear-gradient(#7e91b4, #e2f5ff);
   background: linear-gradient(#7e91b4, #e2f5ff);
-  -webkit-box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
-          box-shadow: 0 -0.2vh 0 0.2vh rgba(0, 0, 0, 0.8);
 }
 main .implementation #panel .elem > .faces {
   position: absolute;
