@@ -26,13 +26,17 @@ function rotatePanel() {
 		});
 	});
 }
-
 rotatePanel();
 
-var user = navigator.userAgent;
-
-if (!(/Chrome|Safari/.test(user))) {
+function showUnSupportedMessage() {
+	var user = navigator.userAgent;
 	const panel = document.querySelector('#panel');
-	panel.classList.add("no_supported");
-	panel.innerHTML = `<h2 class="title">Use the browser on the Chromium engine like: Chrome, Opera and etc.</h2>`
+	console.log(user);
+
+	if (!(/Chrome|Safari|Opera/.test(user))) {
+		panel.classList.add("no_supported_message");
+		panel.innerHTML = `<h2 class="title">Sorry, 3D panel is not compatible on your browser.<br>
+		Use Chrome, Safari or Opera 15+ instead.</h2>`;
+	} 
 }
+showUnSupportedMessage();

@@ -1133,7 +1133,7 @@ main .rotation_tuning .range input[type="range"]::-ms-thumb:active {
   bottom: 0;
   color: white;
 }
-.no_supported .title {
+.no_supported_message .title {
   margin: 1em;
   font-size: 4rem;
   color: #a6ffda;
