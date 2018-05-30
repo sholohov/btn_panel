@@ -63,8 +63,8 @@ main {
 	.title {
 		text-align: center;
 		margin: 1rem;
-		border-bottom: 1px solid rgba(240, 240, 240, 0.5);
-		text-shadow: 0 0 1vh black;
+		color: rgba(255, 255, 255, 0.8);
+		text-shadow: 0 2vh 1.5vh rgba(0, 0, 0, 0.4);
 	}
 
 	.reference {
@@ -99,7 +99,7 @@ main {
 			justify-content: center;
 			align-items: center;
 			margin: auto;
-			transform: rotateX(50deg);
+			transform: rotateX(45deg);
 
 			._octagonal() {
 				clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
@@ -333,8 +333,8 @@ main {
 								line-height: 0.8;
 								text-transform: uppercase;
 								text-shadow: 0 0 1vh white,
-								             0 0 1vh white,
-								             0 0 1vh white;
+														 0 0 1vh white,
+														 0 0 1vh white;
 								-webkit-text-stroke: 0.15vh white;
 							}
 						}
@@ -560,10 +560,15 @@ main {
 		width: 100%;
 		
 		.range {
-			filter: drop-shadow(0 0 1vh black);
 			display: flex;
 			width: 100vh;
 			max-width: 94%;
+			opacity: 0.7;
+			filter: drop-shadow(0 2vh 1vh black);
+
+			&:hover, &:active {
+				opacity: 1;
+			}
 
 			.axis, .wrapper {
 				margin: 0 1vh;
@@ -576,6 +581,93 @@ main {
 					width: 100%;
 				}
 			}
+
+			input[type="range"] {
+				// стили ползунка
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				cursor: ew-resize;
+				font-size: 2vh;
+				outline: none;
+				background: transparent;
+				-webkit-appearance: none;
+
+				&:active,
+				&:focus,
+				&:hover {
+					outline: none;
+				}
+
+				.slider-runnable-track() {
+					// стили дорожки
+					width: 100%;
+					height: 1.25vh;
+					border-radius: 1.25vh;
+					background: rgba(255, 255, 255, 0.5);
+				}
+
+				.slider-runnable-thumb() {
+					// стили бегунка
+					width: 4vh;
+					height: 4vh;
+					margin: -1.375vh 0 0;
+					background: #fff;
+					border-radius: 50%;
+					// box-shadow: 0 0 0.5em rgba(0,0,0,0.25);
+					transition: 0.2s ease;
+					transform: scale(0.9, 0.9);
+
+					&:hover {
+						transform: scale(1,1);
+						// box-shadow: 0 0.25em 0.5em 0.125em rgba(0,0,0,0.25)
+					}
+
+					&:active {
+						background: #fff;
+						// box-shadow: 0 0 2em rgba(255,255,255,0.5);
+						// box-shadow: 0 0.25em 0.5em 0.125em rgba(0,0,0s,0.25)
+					}
+				}
+
+				&::-webkit-slider-runnable-track {
+					.slider-runnable-track();
+				}
+
+				&::-moz-range-track {
+					.slider-runnable-track();
+				}
+
+				&::-ms-track {
+					// должен следовать после -webkit-
+					border-color: transparent;
+					color: transparent;
+					.slider-runnable-track();
+				}
+
+				&::-webkit-slider-thumb {
+					-webkit-appearance: none;
+					box-sizing: content-box;
+					.slider-runnable-thumb();
+				}
+
+				&::-moz-range-thumb {
+					.slider-runnable-thumb();
+				}
+
+				&::-ms-thumb {
+					// должен следовать после -webkit-
+					.slider-runnable-thumb();
+				}
+			}
 		}
 	}
+}
+
+#footer {
+	position: absolute;
+	padding: 0.5em;
+	left: 0; right: 0; bottom: 0;
+	color: white;
 }
