@@ -58,7 +58,7 @@ main {
 main .title {
   text-align: center;
   margin: 1rem;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.5);
   text-shadow: 0 0 1vh black;
 }
 main .reference {
@@ -1002,8 +1002,8 @@ main .rotation_tuning {
   width: 100%;
 }
 main .rotation_tuning .range {
-  -webkit-filter: drop-shadow(0 0 0.5vh black);
-          filter: drop-shadow(0 0 0.5vh black);
+  -webkit-filter: drop-shadow(0 0 1vh black);
+          filter: drop-shadow(0 0 1vh black);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
