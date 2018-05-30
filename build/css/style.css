@@ -170,6 +170,14 @@ main .implementation #panel .elem > .faces .side.bottom {
           border-radius: 2.5vh;
   background-color: #4a4e64;
 }
+main .implementation #panel .elem > .faces .side.front::before,
+main .implementation #panel .elem > .faces .side.back::before,
+main .implementation #panel .elem > .faces .side.front::after,
+main .implementation #panel .elem > .faces .side.back::after {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  background-color: #555973;
+}
 main .implementation #panel .elem:not(.five) .faces .side.front {
   height: 3vh;
   top: auto;
@@ -203,6 +211,44 @@ main .implementation #panel .elem:not(.five) .faces .side.front,
 main .implementation #panel .elem:not(.five) .faces .side.back {
   left: 1.75vh;
   right: 1.75vh;
+}
+main .implementation #panel .elem:not(.five) .faces .side.front::before,
+main .implementation #panel .elem:not(.five) .faces .side.back::before,
+main .implementation #panel .elem:not(.five) .faces .side.front::after,
+main .implementation #panel .elem:not(.five) .faces .side.back::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  -webkit-box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+}
+main .implementation #panel .elem:not(.five) .faces .side.back::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, -1.25vh) rotateY(-45deg);
+          transform: translate3d(-70%, 0, -1.25vh) rotateY(-45deg);
+}
+main .implementation #panel .elem:not(.five) .faces .side.back::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, -1.25vh) rotateY(45deg);
+          transform: translate3d(70%, 0, -1.25vh) rotateY(45deg);
+}
+main .implementation #panel .elem:not(.five) .faces .side.front::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, 1.25vh) rotateY(45deg);
+          transform: translate3d(-70%, 0, 1.25vh) rotateY(45deg);
+}
+main .implementation #panel .elem:not(.five) .faces .side.front::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, 1.25vh) rotateY(-45deg);
+          transform: translate3d(70%, 0, 1.25vh) rotateY(-45deg);
 }
 main .implementation #panel .elem.five > .shape .side {
   position: absolute;
@@ -387,6 +433,50 @@ main .implementation #panel .elem.one .btn .side.back {
   left: 15%;
   right: 15%;
 }
+main .implementation #panel .elem.one .btn .side.front::before,
+main .implementation #panel .elem.one .btn .side.back::before,
+main .implementation #panel .elem.one .btn .side.front::after,
+main .implementation #panel .elem.one .btn .side.back::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  -webkit-box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+}
+main .implementation #panel .elem.one .btn .side.back::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, -1.25vh) rotateY(-70deg);
+          transform: translate3d(-70%, 0, -1.25vh) rotateY(-70deg);
+}
+main .implementation #panel .elem.one .btn .side.back::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, -1.25vh) rotateY(70deg);
+          transform: translate3d(70%, 0, -1.25vh) rotateY(70deg);
+}
+main .implementation #panel .elem.one .btn .side.front::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, 1.25vh) rotateY(70deg);
+          transform: translate3d(-70%, 0, 1.25vh) rotateY(70deg);
+}
+main .implementation #panel .elem.one .btn .side.front::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, 1.25vh) rotateY(-70deg);
+          transform: translate3d(70%, 0, 1.25vh) rotateY(-70deg);
+}
+main .implementation #panel .elem.one .btn .side.front::before,
+main .implementation #panel .elem.one .btn .side.back::before,
+main .implementation #panel .elem.one .btn .side.front::after,
+main .implementation #panel .elem.one .btn .side.back::after {
+  background-color: #a32fac;
+}
 main .implementation #panel .elem.two .btn {
   width: 7vh;
 }
@@ -439,6 +529,50 @@ main .implementation #panel .elem.two .btn .side.front,
 main .implementation #panel .elem.two .btn .side.back {
   left: 15%;
   right: 15%;
+}
+main .implementation #panel .elem.two .btn .side.front::before,
+main .implementation #panel .elem.two .btn .side.back::before,
+main .implementation #panel .elem.two .btn .side.front::after,
+main .implementation #panel .elem.two .btn .side.back::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  -webkit-box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+}
+main .implementation #panel .elem.two .btn .side.back::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, -1.25vh) rotateY(-70deg);
+          transform: translate3d(-70%, 0, -1.25vh) rotateY(-70deg);
+}
+main .implementation #panel .elem.two .btn .side.back::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, -1.25vh) rotateY(70deg);
+          transform: translate3d(70%, 0, -1.25vh) rotateY(70deg);
+}
+main .implementation #panel .elem.two .btn .side.front::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, 1.25vh) rotateY(70deg);
+          transform: translate3d(-70%, 0, 1.25vh) rotateY(70deg);
+}
+main .implementation #panel .elem.two .btn .side.front::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, 1.25vh) rotateY(-70deg);
+          transform: translate3d(70%, 0, 1.25vh) rotateY(-70deg);
+}
+main .implementation #panel .elem.two .btn .side.front::before,
+main .implementation #panel .elem.two .btn .side.back::before,
+main .implementation #panel .elem.two .btn .side.front::after,
+main .implementation #panel .elem.two .btn .side.back::after {
+  background-color: #0275c3;
 }
 main .implementation #panel .elem.three {
   width: 45vh;
@@ -504,6 +638,50 @@ main .implementation #panel .elem.four .btn .side.front,
 main .implementation #panel .elem.four .btn .side.back {
   left: 0;
   right: 0;
+}
+main .implementation #panel .elem.four .btn .side.front::before,
+main .implementation #panel .elem.four .btn .side.back::before,
+main .implementation #panel .elem.four .btn .side.front::after,
+main .implementation #panel .elem.four .btn .side.back::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  -webkit-box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 2vh rgba(0, 0, 0, 0.5);
+}
+main .implementation #panel .elem.four .btn .side.back::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, -1.25vh) rotateY(-45deg);
+          transform: translate3d(-70%, 0, -1.25vh) rotateY(-45deg);
+}
+main .implementation #panel .elem.four .btn .side.back::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, -1.25vh) rotateY(45deg);
+          transform: translate3d(70%, 0, -1.25vh) rotateY(45deg);
+}
+main .implementation #panel .elem.four .btn .side.front::before {
+  width: 3vh;
+  left: 0;
+  -webkit-transform: translate3d(-70%, 0, 1.25vh) rotateY(45deg);
+          transform: translate3d(-70%, 0, 1.25vh) rotateY(45deg);
+}
+main .implementation #panel .elem.four .btn .side.front::after {
+  width: 3vh;
+  right: 0;
+  -webkit-transform: translate3d(70%, 0, 1.25vh) rotateY(-45deg);
+          transform: translate3d(70%, 0, 1.25vh) rotateY(-45deg);
+}
+main .implementation #panel .elem.four .btn .side.front::before,
+main .implementation #panel .elem.four .btn .side.back::before,
+main .implementation #panel .elem.four .btn .side.front::after,
+main .implementation #panel .elem.four .btn .side.back::after {
+  display: none;
 }
 main .implementation #panel .elem.five {
   -webkit-box-pack: center;
