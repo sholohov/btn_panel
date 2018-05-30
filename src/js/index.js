@@ -28,3 +28,11 @@ function rotatePanel() {
 }
 
 rotatePanel();
+
+var user = navigator.userAgent;
+
+if (!(/Chrome|Safari/.test(user))) {
+	const panel = document.querySelector('#panel');
+	panel.classList.add("no_supported");
+	panel.innerHTML = `<h2 class="title">Use the browser on the Chromium engine like: Chrome, Opera and etc.</h2>`
+}
