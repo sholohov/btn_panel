@@ -5,10 +5,11 @@
 @rem: 0.0625rem;
 @em: 0.0625em;
 @colorSteel: #7e91b4; // цвет кнопок
-@colorSteelDark: #555973; // цвет базы
+@colorSteelDark: #51536b; // цвет базы
 @colorBlue: #1689d7; // цвет кнопок
 @colorGreen: #67E83F; // цвет кнопок
 @colorViolet: #E773F0; // цвет кнопок
+@colorBack: rgb(77, 77, 100);
 
 html {
 	font-size: 1rem;
@@ -48,11 +49,22 @@ main {
 	padding: 0;
 	overflow: hidden;
 	user-select: none;
+	color: white;
+	background-color: @colorBack;
+	background-image: linear-gradient(30deg, darken(@colorBack, 5%) 12%, transparent 12.5%, transparent 87%, darken(@colorBack, 5%) 87.5%, darken(@colorBack, 5%)),
+	linear-gradient(150deg, darken(@colorBack, 5%) 12%, transparent 12.5%, transparent 87%, darken(@colorBack, 5%) 87.5%, darken(@colorBack, 5%)),
+	linear-gradient(30deg, darken(@colorBack, 5%) 12%, transparent 12.5%, transparent 87%, darken(@colorBack, 5%) 87.5%, darken(@colorBack, 5%)),
+	linear-gradient(150deg, darken(@colorBack, 5%) 12%, transparent 12.5%, transparent 87%, darken(@colorBack, 5%) 87.5%, darken(@colorBack, 5%)),
+	linear-gradient(60deg, lighten(@colorBack, 25%) 25%, transparent 25.5%, transparent 75%, lighten(@colorBack, 25%) 75%, lighten(@colorBack, 25%)), 
+	linear-gradient(60deg, lighten(@colorBack, 25%) 25%, transparent 25.5%, transparent 75%, lighten(@colorBack, 25%) 75%, lighten(@colorBack, 25%));
+	background-size:80px 140px;
+	background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 
 	.title {
 		text-align: center;
 		margin: 1rem;
 		border-bottom: 1px solid rgb(240, 240, 240);
+		text-shadow: 0 0 1vh black;
 	}
 
 	.reference {
@@ -546,8 +558,9 @@ main {
 		flex-direction: column;
 		padding: 4vh;
 		width: 100%;
-
+		
 		.range {
+			filter: drop-shadow(0 0 0.5vh black);
 			display: flex;
 			width: 100vh;
 			max-width: 94%;

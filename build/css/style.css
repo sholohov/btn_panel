@@ -46,11 +46,20 @@ main {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  color: white;
+  background-color: #4d4d64;
+  background-image: -webkit-linear-gradient(60deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -webkit-linear-gradient(300deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -webkit-linear-gradient(60deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -webkit-linear-gradient(300deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -webkit-linear-gradient(30deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6), -webkit-linear-gradient(30deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6);
+  background-image: -o-linear-gradient(60deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -o-linear-gradient(300deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -o-linear-gradient(60deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -o-linear-gradient(300deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), -o-linear-gradient(30deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6), -o-linear-gradient(30deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6);
+  background-image: linear-gradient(30deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), linear-gradient(150deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), linear-gradient(30deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), linear-gradient(150deg, #424256 12%, transparent 12.5%, transparent 87%, #424256 87.5%, #424256), linear-gradient(60deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6), linear-gradient(60deg, #8b8ba6 25%, transparent 25.5%, transparent 75%, #8b8ba6 75%, #8b8ba6);
+  -webkit-background-size: 80px 140px;
+          background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 main .title {
   text-align: center;
   margin: 1rem;
   border-bottom: 1px solid #f0f0f0;
+  text-shadow: 0 0 1vh black;
 }
 main .reference {
   width: 100%;
@@ -159,16 +168,16 @@ main .implementation #panel .elem > .faces .side {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #555973;
+  background-color: #51536b;
 }
 main .implementation #panel .elem > .faces .side::before,
 main .implementation #panel .elem > .faces .side::after {
-  background-color: #555973;
+  background-color: #51536b;
 }
 main .implementation #panel .elem > .faces .side.bottom {
   -webkit-border-radius: 2.5vh;
           border-radius: 2.5vh;
-  background-color: #4a4e64;
+  background-color: #46485c;
 }
 main .implementation #panel .elem > .faces .side.front::before,
 main .implementation #panel .elem > .faces .side.back::before,
@@ -176,7 +185,7 @@ main .implementation #panel .elem > .faces .side.front::after,
 main .implementation #panel .elem > .faces .side.back::after {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-  background-color: #555973;
+  background-color: #51536b;
 }
 main .implementation #panel .elem:not(.five) .faces .side.front {
   height: 3vh;
@@ -260,7 +269,7 @@ main .implementation #panel .elem.five > .shape .side {
 main .implementation #panel .elem.five > .shape .side.bottom {
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  background-color: #555973;
+  background-color: #51536b;
 }
 main .implementation #panel .elem .display {
   display: -webkit-box;
@@ -710,7 +719,7 @@ main .implementation #panel .elem.five:after {
           transform: translateZ(-3vh);
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  background-color: #4a4e64;
+  background-color: #46485c;
 }
 main .implementation #panel .elem.five .btn {
   position: relative;
@@ -873,7 +882,7 @@ main .implementation #panel .elem.five > .shape .side {
   width: 3.8vh;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #555973;
+  background-color: #51536b;
 }
 main .implementation #panel .elem.five > .shape .side.s-0 {
   -webkit-transform: rotateY(0deg) translateZ(13.9vh);
@@ -993,6 +1002,8 @@ main .rotation_tuning {
   width: 100%;
 }
 main .rotation_tuning .range {
+  -webkit-filter: drop-shadow(0 0 0.5vh black);
+          filter: drop-shadow(0 0 0.5vh black);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
