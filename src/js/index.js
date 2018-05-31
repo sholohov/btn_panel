@@ -1,6 +1,6 @@
+const panel = document.querySelector("#panel");
 
 function rotatePanel() {
-	const panel = document.querySelector("#panel");
 	const rangeX = document.querySelector("#panel_rotate_x");
 	const rangeY = document.querySelector("#panel_rotate_y");
 
@@ -30,8 +30,6 @@ rotatePanel();
 
 function showUnSupportedMessage() {
 	var user = navigator.userAgent;
-	const panel = document.querySelector('#panel');
-	console.log(user);
 
 	if (!(/Chrome|Safari|Opera/.test(user))) {
 		panel.classList.add("no_supported_message");
@@ -40,3 +38,13 @@ function showUnSupportedMessage() {
 	} 
 }
 showUnSupportedMessage();
+
+
+function linkEventCancel() {
+	panel.addEventListener("click", (e) => {
+		if (e.target.matches('.btn')) {
+			e.preventDefault();
+		}
+	});
+}
+linkEventCancel();
